@@ -19,7 +19,7 @@ define Package/slider-support/default
 	DEPENDS+=+!BUSYBOX_DEFAULT_SED:sed
 	PKGARCH:=all
 	TITLE:=Slider support
-	URL:=https://docs.openwrt.melmac.net/slider-support/
+	URL:=https://github.com/stangri/slider-support/
 endef
 
 define Package/slider-support-ar150
