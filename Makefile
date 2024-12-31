@@ -5,7 +5,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=slider-support
 PKG_VERSION:=0.0.3
-PKG_RELEASE:=1
+PKG_RELEASE:=3
 PKG_LICENSE:=AGPL-3.0-or-later
 PKG_MAINTAINER:=Stan Grishin <stangri@melmac.ca>
 
@@ -96,12 +96,12 @@ Package/slider-support-ar750/install = $(Package/slider-support/install)
 Package/slider-support-mt300n/install = $(Package/slider-support/install)
 
 define Package/slider-support/postinst
-	#!/bin/sh
-	# check if we are on real system
-	if [ -z "$${IPKG_INSTROOT}" ]; then
-		/etc/init.d/slider-support enable
-	fi
-	exit 0
+#!/bin/sh
+# check if we are on real system
+if [ -z "$${IPKG_INSTROOT}" ]; then
+	/etc/init.d/slider-support enable
+fi
+exit 0
 endef
 
 Package/slider-support-ar150/postinst = $(Package/slider-support/postinst)
@@ -110,12 +110,12 @@ Package/slider-support-ar750/postinst = $(Package/slider-support/postinst)
 Package/slider-support-mt300n/postinst = $(Package/slider-support/postinst)
 
 define Package/slider-support/prerm
-	#!/bin/sh
-	# check if we are on real system
-	if [ -z "$${IPKG_INSTROOT}" ]; then
-		/etc/init.d/slider-support disable
-	fi
-	exit 0
+#!/bin/sh
+# check if we are on real system
+if [ -z "$${IPKG_INSTROOT}" ]; then
+	/etc/init.d/slider-support disable
+fi
+exit 0
 endef
 
 Package/slider-support-ar150/prerm = $(Package/slider-support/prerm)
